@@ -1,5 +1,6 @@
 // addrspace.h 
-//	Data structures to keep track of executing user programs 
+//	Data structures to keep track of executing user programs
+//  Estrutura de datos para seguir la pista de ejecucion de los programas de usuario 
 //	(address spaces).
 //
 //	For now, we don't keep any information about address spaces.
@@ -16,13 +17,15 @@
 #include "copyright.h"
 #include "filesys.h"
 
-#define UserStackSize		1024 	// increase this as necessary!
+#define UserStackSize		1024 	// increase this as necessary! Incrementar si es necesario
 
 class AddrSpace {
   public:
-    AddrSpace(OpenFile *executable);	// Create an address space,
-					// initializing it with the program
-					// stored in the file "executable"
+  // Create an address space
+  // initializing it with the program
+	// stored in the file "executable"
+    AddrSpace(OpenFile *executable);	
+				
     ~AddrSpace();			// De-allocate an address space
 
     void InitRegisters();		// Initialize user-level CPU registers,
